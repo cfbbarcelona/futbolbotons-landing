@@ -74,13 +74,13 @@ const clubsData = [
     name: 'Club Futbol Botons Barcelona',
     abbr: 'CFBB',
     logo: 'images/logos/logo-cfbb.png',
-    lat: 41.3950,
-    lng: 2.1600,
+    lat: 41.37840228287077,
+    lng: 2.1587632288565213,
     location: 'Barcelona (Eixample)',
     address: 'C/ Viladomat 75, 08015 Barcelona',
     phone: '',
     hours: '',
-    website: '',
+    website: 'http://cfbb.futbolbotons.cat/',
     email: 'contacte.cfbb@gmail.com'
   },
   {

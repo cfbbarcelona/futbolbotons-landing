@@ -97,8 +97,9 @@ function initScrollAnimations() {
 function initCarousel() {
   if (typeof clubsData === 'undefined' || !clubsData.length) return;
 
-  const wrapper = document.querySelector('.carousel-wrapper');
-  const track   = document.querySelector('.carousel-track');
+  const wrapper     = document.querySelector('.carousel-wrapper');
+  const track       = document.querySelector('.carousel-track');
+  const detailPanel = document.getElementById('club-detail');
   const detailLogo  = document.getElementById('detail-logo');
   const detailName  = document.getElementById('detail-name');
   const detailLoc   = document.getElementById('detail-location');
@@ -150,11 +151,17 @@ function initCarousel() {
 
   // State
   let pos = 0;
-  let dragging    = false;
-  let dragStartX  = 0;
+  let dragging     = false;
+  let hasDragged   = false;
+  let dragStartX   = 0;
   let dragStartPos = 0;
   let lastActiveIdx = -1;
-  const AUTO_SPEED = 0.55; // px per frame
+  let pauseUntil   = 0;
+  let targetPos    = null; // non-null → smooth scroll to card
+  const AUTO_SPEED       = 0.55; // px per frame
+  const PAUSE_AFTER_DRAG = 3000; // ms
+  const DRAG_THRESHOLD   = 5;   // px — below this = click, not drag
+  const LERP_SPEED       = 0.10; // easing factor per frame
 
   // Center on club 0 of middle set
   function initPos() {
@@ -168,8 +175,14 @@ function initCarousel() {
   }
 
   function normalizePos() {
-    if (pos >= 2 * SET_W) pos -= SET_W;
-    if (pos <  SET_W)     pos += SET_W;
+    if (pos >= 2 * SET_W) {
+      pos -= SET_W;
+      if (targetPos !== null) targetPos -= SET_W;
+    }
+    if (pos < SET_W) {
+      pos += SET_W;
+      if (targetPos !== null) targetPos += SET_W;
+    }
   }
 
   function getActiveIdx() {
@@ -202,6 +215,17 @@ function initCarousel() {
       detailLogo.style.opacity = '1';
       detailName.style.opacity = '1';
       if (detailLoc) detailLoc.style.opacity = '1';
+
+      // Link to club website if available
+      if (detailPanel) {
+        if (club.website) {
+          detailPanel.classList.add('is-linked');
+          detailPanel.onclick = () => window.open(club.website, '_blank', 'noopener');
+        } else {
+          detailPanel.classList.remove('is-linked');
+          detailPanel.onclick = null;
+        }
+      }
     }, 200);
 
     // Update active class
@@ -213,7 +237,17 @@ function initCarousel() {
   // Animation loop
   let rafId = null;
   function loop() {
-    if (!dragging) {
+    if (targetPos !== null) {
+      // Smooth scroll to clicked card
+      pos += (targetPos - pos) * LERP_SPEED;
+      if (Math.abs(targetPos - pos) < 0.5) {
+        pos = targetPos;
+        targetPos = null;
+      }
+      normalizePos();
+      applyTransform();
+      updateDetail(getActiveIdx());
+    } else if (!dragging && Date.now() >= pauseUntil) {
       pos += AUTO_SPEED;
       normalizePos();
       applyTransform();
@@ -228,7 +262,9 @@ function initCarousel() {
   }
 
   function onDragStart(e) {
-    dragging = true;
+    dragging   = true;
+    hasDragged = false;
+    targetPos  = null;
     dragStartX   = getX(e);
     dragStartPos = pos;
     wrapper.style.cursor = 'grabbing';
@@ -237,6 +273,7 @@ function initCarousel() {
   function onDragMove(e) {
     if (!dragging) return;
     const dx = getX(e) - dragStartX;
+    if (Math.abs(dx) > DRAG_THRESHOLD) hasDragged = true;
     pos = dragStartPos - dx;
     normalizePos();
     applyTransform();
@@ -246,8 +283,36 @@ function initCarousel() {
   function onDragEnd() {
     if (!dragging) return;
     dragging = false;
+    pauseUntil = Date.now() + PAUSE_AFTER_DRAG;
     wrapper.style.cursor = '';
   }
+
+  // Click on a card → smooth scroll to center it
+  wrapper.addEventListener('click', (e) => {
+    if (hasDragged) return;
+    const item = e.target.closest('.carousel-item');
+    if (!item) return;
+
+    // getBoundingClientRect gives screen-space position accounting for the
+    // CSS transform on the track. Convert to track-space coords via current pos.
+    const wrapperRect  = wrapper.getBoundingClientRect();
+    const itemRect     = item.getBoundingClientRect();
+    const itemScreenCenter = itemRect.left + itemRect.width / 2;
+    const containerW   = wrapperRect.width;
+
+    // track-space center of the clicked card
+    const cardCenter = pos + (itemScreenCenter - wrapperRect.left);
+    let t = cardCenter - containerW / 2;
+
+    // Pick the closest equivalent copy to avoid long wraparound
+    const candidates = [t - SET_W, t, t + SET_W];
+    t = candidates.reduce((best, v) =>
+      Math.abs(v - pos) < Math.abs(best - pos) ? v : best
+    , t);
+
+    targetPos  = t;
+    pauseUntil = Date.now() + PAUSE_AFTER_DRAG;
+  });
 
   wrapper.addEventListener('mousedown',  onDragStart);
   window.addEventListener('mousemove',   onDragMove);

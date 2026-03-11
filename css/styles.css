@@ -629,6 +629,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   min-height: 110px;
   transition: var(--trans);
 }
+.club-detail.is-linked {
+  cursor: pointer;
+}
+.club-detail.is-linked:hover {
+  border-color: var(--color-gold);
+  background: rgba(200,149,42,0.07);
+}
 .club-detail-logo {
   width: 80px; height: 80px;
   object-fit: contain;
