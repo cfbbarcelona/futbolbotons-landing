@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Futbol amb Botons · futbolbotons.cat</title>
+  <meta name="description" content="Web de referència i divulgació del futbol amb botons a Catalunya. Descobreix clubs, competicions i on pots practicar." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Free -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#inici" class="header-logo">futbolbotons<span>.cat</span></a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Navegació principal">
+        <ul>
+          <li><a href="#inici">Inici</a></li>
+          <li><a href="#que-es">Què és</a></li>
+          <li><a href="#historia">Història</a></li>
+          <li><a href="#clubs">Clubs</a></li>
+          <li><a href="#competicions">Competicions</a></li>
+          <li><a href="#troba-club">Troba el teu club</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#clubs" class="btn btn--header">Veure clubs</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Obrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         SECTION 1 — HERO
+         ===================================================== -->
+    <section id="inici" class="section section--dark hero-section">
+      <div class="hero-bg">
+        <img
+          src="images/hero.jpg"
+          alt="Partit de futbol amb botons en marxa"
+        />
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container hero-content">
+        <span class="hero-tag" data-animate>futbolbotons.cat</span>
+        <h1 class="hero-title" data-animate data-delay="1">Futbol<br>amb botons</h1>
+        <p class="hero-subtitle" data-animate data-delay="2">
+          Una tradició catalana viva que combina futbol,<br>
+          precisió, tàctica i comunitat.
+        </p>
+        <p class="hero-body" data-animate data-delay="3">
+          Descobreix què és el futbol amb botons, d'on ve,
+          quins clubs el mantenen viu i on el pots practicar avui.
+        </p>
+        <div class="hero-ctas" data-animate data-delay="4">
+          <a href="#que-es" class="btn btn--primary">Descobreix-lo</a>
+          <a href="#clubs"  class="btn btn--outline">Veure clubs</a>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 2 — QUÈ ÉS
+         ===================================================== -->
+    <section id="que-es" class="section section--white que-es-section">
+      <div class="container">
+        <div class="section-inner section-inner--60-40">
+
+          <!-- Left: text + features -->
+          <div>
+            <span class="eyebrow" data-animate>Què és</span>
+            <h2 class="section-title" data-animate data-delay="1">
+              Un joc de futbol de taula<br>amb identitat pròpia
+            </h2>
+            <p class="section-body" data-animate data-delay="2">
+              El futbol amb botons és una modalitat de joc inspirada en el futbol,
+              jugada damunt d'un camp de taula amb botons, pilota i porteries.
+              Però no és només una curiositat: és una pràctica amb història,
+              tècnica, reglament i comunitat.
+            </p>
+
+            <div class="features-grid">
+              <div class="feature-block" data-animate data-delay="2">
+                <i class="fa-solid fa-crosshairs feature-icon" aria-hidden="true"></i>
+                <div class="feature-title">Precisió</div>
+                <div class="feature-text">Cada toc compta.</div>
+              </div>
+              <div class="feature-block" data-animate data-delay="3">
+                <i class="fa-solid fa-chess feature-icon" aria-hidden="true"></i>
+                <div class="feature-title">Tàctica</div>
+                <div class="feature-text">Cal pensar la jugada abans d'executar-la.</div>
+              </div>
+              <div class="feature-block" data-animate data-delay="3">
+                <i class="fa-solid fa-star feature-icon" aria-hidden="true"></i>
+                <div class="feature-title">Identitat</div>
+                <div class="feature-text">Cada equip i cada club tenen personalitat pròpia.</div>
+              </div>
+              <div class="feature-block" data-animate data-delay="4">
+                <i class="fa-solid fa-users feature-icon" aria-hidden="true"></i>
+                <div class="feature-title">Comunitat</div>
+                <div class="feature-text">Es practica en clubs, trobades i competicions.</div>
+              </div>
+            </div>
+
+            <div class="why-card" data-animate data-delay="4">
+              <div class="why-card-title">Per què atrapa?</div>
+              <p class="why-card-text">
+                Perquè barreja l'emoció del futbol amb l'habilitat manual,
+                la concentració i el gust pel detall.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: image -->
+          <div data-animate data-delay="2">
+            <div class="image-wrapper image-wrapper--tall">
+              <img
+                src="images/que-es.jpg"
+                alt="Composició de camp, botons i pilota"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 3 — COM ES JUGA
+         ===================================================== -->
+    <section id="com-es-juga" class="section section--dark com-es-juga-section">
+      <div class="container">
+        <div style="max-width:700px; margin-bottom: 8px;">
+          <span class="eyebrow" data-animate>Com funciona</span>
+          <h2 class="section-title" data-animate data-delay="1">
+            Simple d'entendre.<br>Difícil de dominar.
+          </h2>
+          <p class="section-body" data-animate data-delay="2">
+            Cada jugador controla un equip de botons sobre un terreny de joc.
+            L'objectiu és construir jugades, superar la defensa rival i marcar gol.
+            La gràcia és en la precisió del toc, la col·locació i la lectura tàctica del partit.
+          </p>
+        </div>
+
+        <div class="how-grid">
+          <div class="how-card" data-animate data-delay="2">
+            <div class="how-card-num">01</div>
+            <div class="how-card-title">Terreny de joc</div>
+            <p class="how-card-text">Camp, porteries, pilota i equips preparats per competir.</p>
+          </div>
+          <div class="how-card" data-animate data-delay="3">
+            <div class="how-card-num">02</div>
+            <div class="how-card-title">Moviment</div>
+            <p class="how-card-text">Els botons es desplacen amb tocs precisos per construir la jugada.</p>
+          </div>
+          <div class="how-card" data-animate data-delay="4">
+            <div class="how-card-num">03</div>
+            <div class="how-card-title">Tàctica</div>
+            <p class="how-card-text">Cada acció obre o tanca opcions ofensives i defensives.</p>
+          </div>
+        </div>
+
+        <div class="highlight-sentence" data-animate data-delay="3">
+          No cal conèixer-lo d'entrada per gaudir-ne: en pocs minuts s'entén,
+          i en molts anys encara es continua perfeccionant.
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 4 — HISTÒRIA
+         ===================================================== -->
+    <section id="historia" class="section section--light historia-section">
+      <div class="container">
+        <div class="section-inner section-inner--40-60">
+
+          <!-- Left: image -->
+          <div data-animate>
+            <div class="image-wrapper image-wrapper--tall">
+              <img
+                src="images/historia.jpeg"
+                alt="Col·latge visual del futbol amb botons, passat i present"
+              />
+            </div>
+          </div>
+
+          <!-- Right: text + timeline -->
+          <div>
+            <span class="eyebrow" data-animate>Història</span>
+            <h2 class="section-title" data-animate data-delay="1">
+              D'una tradició popular<br>a una pràctica viva
+            </h2>
+            <p class="section-body" data-animate data-delay="2">
+              El futbol amb botons forma part d'una tradició arrelada a Catalunya.
+              Durant dècades ha estat present en escoles, barris, portals i espais de
+              trobada, i amb el temps ha pres forma a través d'associacions, clubs i competicions.
+            </p>
+
+            <div class="timeline" data-animate data-delay="2">
+              <div class="timeline-track">
+                <div class="timeline-progress"></div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-label">Orígens populars</span>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-label">Arrelament als barris</span>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-label">Naixement d'associacions i clubs</span>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-label">Competicions i continuïtat actual</span>
+              </div>
+            </div>
+
+            <p class="historia-note" data-animate data-delay="3">
+              Avui, el futbol amb botons continua viu gràcies a la tasca constant
+              dels clubs i de les persones que n'han mantingut la pràctica,
+              la memòria i la projecció.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 5 — CLUBS
+         ===================================================== -->
+    <section id="clubs" class="section section--dark clubs-section">
+      <div class="container">
+
+        <div class="clubs-header">
+          <span class="eyebrow" data-animate>Clubs</span>
+          <h2 class="section-title" data-animate data-delay="1">
+            A Catalunya hi ha clubs que<br>mantenen viu el futbol amb botons
+          </h2>
+          <p class="section-body" data-animate data-delay="2">
+            El futbol amb botons no és només història: és una activitat viva, amb clubs,
+            associacions i espais on jugar, aprendre i compartir afició.
+            Aquesta xarxa és clau per entendre la seva continuïtat.
+          </p>
+        </div>
+
+        <!-- Carousel -->
+        <div class="carousel-wrapper" data-animate data-delay="2">
+          <div class="carousel-track"></div>
+        </div>
+
+        <!-- Detail panel -->
+        <div class="club-detail" id="club-detail">
+          <img
+            class="club-detail-logo"
+            id="detail-logo"
+            src="https://placehold.co/80x80/0d2240/c8952a?text=..."
+            alt=""
+          />
+          <div class="club-detail-info">
+            <div class="club-detail-name" id="detail-name">—</div>
+            <div class="club-detail-location" id="detail-location">—</div>
+          </div>
+        </div>
+
+        <p class="clubs-note" data-animate data-delay="3">
+          Properament, aquí hi trobaràs els enllaços directes als webs i canals de cada club.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 6 — COMPETICIONS
+         ===================================================== -->
+    <section id="competicions" class="section section--white competicions-section">
+      <div class="container">
+        <span class="eyebrow" data-animate>Competicions</span>
+        <h2 class="section-title" data-animate data-delay="1">
+          Més enllà de cada club:<br>opens i grans tornejos
+        </h2>
+        <p class="section-body" data-animate data-delay="2">
+          Cada club pot tenir la seva pròpia activitat o lliga interna, però també existeixen
+          competicions obertes on els jugadors poden participar com a membres dels seus clubs.
+          És aquí on el futbol amb botons es connecta a una dimensió més àmplia i compartida.
+        </p>
+
+        <div class="comp-grid">
+          <div class="comp-card" data-animate data-delay="2">
+            <i class="fa-solid fa-trophy comp-card-icon" aria-hidden="true"></i>
+            <div class="comp-card-title">Lliga de Campions</div>
+            <p class="comp-card-text">Una de les competicions de referència del calendari.</p>
+          </div>
+          <div class="comp-card" data-animate data-delay="3">
+            <i class="fa-solid fa-medal comp-card-icon" aria-hidden="true"></i>
+            <div class="comp-card-title">Copa Catalunya</div>
+            <p class="comp-card-text">Un dels grans punts de trobada competitius del panorama català.</p>
+          </div>
+          <div class="comp-card" data-animate data-delay="4">
+            <i class="fa-solid fa-bolt comp-card-icon" aria-hidden="true"></i>
+            <div class="comp-card-title">Altres opens i tornejos</div>
+            <p class="comp-card-text">Competicions que connecten clubs, jugadors i afició al llarg de la temporada.</p>
+          </div>
+        </div>
+
+        <div class="comp-disclaimer" data-animate data-delay="3">
+          L'objectiu d'aquesta web no és publicar classificacions en viu, sinó explicar el marc
+          competitiu i donar context a la pràctica.
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 7 — TROBA EL TEU CLUB
+         ===================================================== -->
+    <section id="troba-club" class="section section--dark troba-section">
+      <div class="container">
+        <div class="troba-inner">
+
+          <!-- Left: text + search + info card -->
+          <div>
+            <span class="eyebrow" data-animate>Començar</span>
+            <h2 class="section-title" data-animate data-delay="1">
+              Busca el teu club<br>o associació més propera
+            </h2>
+            <p class="section-body" data-animate data-delay="2">
+              Si t'ha despertat la curiositat, el millor pas és acostar-te a un club.
+              Allà és on es viu de veritat: jugant, observant, preguntant i compartint
+              taula amb altres aficionats.
+            </p>
+
+            <div class="search-module" data-animate data-delay="2">
+              <label class="search-label" for="search-input">Cerca per ciutat o zona</label>
+              <div class="search-row">
+                <input
+                  type="text"
+                  class="search-input"
+                  id="search-input"
+                  placeholder="Exemple: Barcelona, Osona, Reus…"
+                  autocomplete="off"
+                />
+                <button class="btn btn--primary" id="search-btn">Buscar</button>
+              </div>
+              <p class="search-secondary">
+                També podràs consultar una futura pàgina de clubs amb localització,
+                contacte i enllaços.
+              </p>
+            </div>
+
+            <div class="info-card" data-animate data-delay="3">
+              <div class="info-card-title">Vols saber-ne més?</div>
+              <p class="info-card-text">
+                En una següent fase, el web també podrà incloure una guia breu
+                de reglament i iniciació.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: map -->
+          <div data-animate data-delay="2">
+            <div class="map-container">
+              <div id="clubs-map" style="width:100%; height:100%;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">futbolbotons<span>.cat</span></div>
+          <p class="footer-tagline">Web de referència i divulgació del futbol amb botons.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Navegació peu de pàgina">
+          <a href="#inici">Inici</a>
+          <a href="#que-es">Què és</a>
+          <a href="#historia">Història</a>
+          <a href="#clubs">Clubs</a>
+          <a href="#competicions">Competicions</a>
+          <a href="#troba-club">Troba el teu club</a>
+        </nav>
+
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="Facebook"  title="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube"   title="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 futbolbotons.cat · Tots els drets reservats</p>
+        <div class="footer-links-sm">
+          <a href="#">Guia</a>
+          <a href="#clubs">Clubs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/clubs-data.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

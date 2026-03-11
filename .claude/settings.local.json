@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p images/logos css js)",
+      "Bash(mv logo-acfb.png images/logos/)",
+      "Bash(mv logo-afbo.jpg images/logos/)",
+      "Bash(mv logo-arfb.jpg images/logos/)",
+      "Bash(mv logo-bap.png images/logos/)",
+      "Bash(mv logo-efba.jpg images/logos/)",
+      "Bash(mv \"logo-cfbb-negre-fons-blanc.png\" images/logos/logo-cfbb.png)",
+      "Bash(mv \"logo-cfbb-negre-fons-blanc-min.png\" images/logos/logo-cfbb-min.png)",
+      "Bash(mv logo-santjoan.png images/logos/)",
+      "Bash(mv logo-fomenthortenc.png images/logos/)",
+      "WebSearch"
+    ]
+  }
+}
