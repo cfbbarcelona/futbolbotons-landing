@@ -34,7 +34,7 @@ Composició clara i minimalista amb els elements bàsics del joc: camp, botons, 
 
 | Camp | Valor |
 |------|-------|
-| **Fitxer destí** | `images/historia.jpg` |
+| **Fitxer destí** | `images/historia.jpeg` |
 | **Dimensions recomanades** | 540 × 660 px (portrait) |
 | **Referència HTML** | `<section id="historia"> .image-wrapper img` |
 
@@ -53,9 +53,8 @@ Els logos s'han mogut a `images/logos/`. Revisa si algun necesita millora de qua
 | AFBO | `images/logos/logo-afbo.jpg` | JPG → considerar PNG amb fons transparent |
 | ARFB | `images/logos/logo-arfb.jpg` | JPG → considerar PNG amb fons transparent |
 | BAP  | `images/logos/logo-bap.png`  | ✓ |
-| EFBA | `images/logos/logo-efba.jpg` | JPG → considerar PNG amb fons transparent |
+| Baix Llobregat | `images/logos/logo-baixllobregat.png` | ✓ |
 | CFBB | `images/logos/logo-cfbb.png` | ✓ (versió gran) |
-| Sant Joan Despí | `images/logos/logo-santjoan.png` | ✓ |
 | Foment Hortenc  | `images/logos/logo-fomenthortenc.png` | ✓ |
 
 ---

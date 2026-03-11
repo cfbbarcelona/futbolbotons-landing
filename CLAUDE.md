@@ -11,6 +11,7 @@ Landing page for [futbolbotons.cat](https://futbolbotons.cat) — a single-page 
 - Plain HTML + CSS + JS — no framework, no build step, no npm
 - Leaflet.js (CDN) for the clubs map
 - Google Fonts (CDN) for typography
+- Font Awesome Free 6 (CDN) for icons
 - Must work as static files on GitHub Pages
 
 ## File structure
