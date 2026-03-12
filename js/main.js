@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initScrollAnimations();
   initCarousel();
+  initCompPhotos();
   initMap();
   initSearch();
 });
@@ -386,6 +387,21 @@ function initMap() {
 
   // Store reference for search
   window._clubMap = map;
+}
+
+/* --- Competition photos crossfade -------------------------- */
+function initCompPhotos() {
+  document.querySelectorAll('.comp-photos').forEach(container => {
+    const photos = container.querySelectorAll('.comp-photo');
+    if (!photos.length) return;
+    let current = 0;
+    photos[current].classList.add('is-active');
+    setInterval(() => {
+      photos[current].classList.remove('is-active');
+      current = (current + 1) % photos.length;
+      photos[current].classList.add('is-active');
+    }, 4000);
+  });
 }
 
 /* --- Search ------------------------------------------------ */

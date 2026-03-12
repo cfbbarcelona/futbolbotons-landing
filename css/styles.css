@@ -779,6 +779,25 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   color: var(--color-muted);
 }
 
+.comp-photos {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: clamp(260px, 33vw, 460px);
+}
+.comp-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.comp-photo.is-active {
+  opacity: 1;
+}
+
 /* ============================================================
    SECTION 7 — TROBA EL TEU CLUB
    ============================================================ */
