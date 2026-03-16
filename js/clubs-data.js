@@ -17,15 +17,16 @@ const clubsData = [
     id: 'afbo',
     name: 'Associació de Futbol Botons d\'Osona',
     abbr: 'AFBO',
-    logo: 'images/logos/logo-afbo.jpg',
-    lat: 41.7926,
-    lng: 2.2239,
+    logo: 'images/logos/logo-afbo.png',
+    lat: 41.79544267938633,
+    lng: 2.2197299537180997,
     location: 'Centelles (Osona)',
-    address: 'Ronda les Tàpies 48, Centelles',
-    phone: '',
+    address: 'Ronda les Tàpies 10, 08540 Centelles',
+    phone: '722453910',
     hours: 'Dimecres ~20:15 h · Diumenge al migdia',
     website: 'http://futbolambbotons.blogspot.com',
-    email: ''
+    email: 'botons.osona@gmail.com',
+    instagram: 'https://www.instagram.com/futbolbotons'
   },
   {
     id: 'arfb',
@@ -85,16 +86,17 @@ const clubsData = [
   },
   {
     id: 'fomenthortenc',
-    name: 'Foment Hortenc',
-    abbr: 'FH',
+    name: 'Futbol Botons Foment Hortenc',
+    abbr: 'FBFH',
     logo: 'images/logos/logo-fomenthortenc.png',
     lat: 41.4345,
     lng: 2.1502,
     location: 'Barcelona (Horta)',
     address: 'C/ Alt de Mariner 15, 08032 Barcelona',
-    phone: '93 429 10 40',
-    hours: '',
+    phone: '646 394 456',
+    hours: 'Dimarts de 19:30 a 21:30 · Possibilitat de jugar a altres hores',
     website: 'https://www.fomenthortenc.cat/web2.0/futbol-botons/',
-    email: 'futbolbotons@fomenthortenc.cat'
+    email: 'futbolbotons@fomenthortenc.cat',
+    instagram: 'https://www.instagram.com/futbolbotonsfomenthortenc'
   }
 ];

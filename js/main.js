@@ -104,6 +104,8 @@ function initCarousel() {
   const detailLogo  = document.getElementById('detail-logo');
   const detailName  = document.getElementById('detail-name');
   const detailLoc   = document.getElementById('detail-location');
+  const detailIG    = document.getElementById('detail-instagram');
+  const detailIGHandle = document.getElementById('detail-instagram-handle');
 
   if (!wrapper || !track) return;
 
@@ -216,6 +218,17 @@ function initCarousel() {
       detailLogo.style.opacity = '1';
       detailName.style.opacity = '1';
       if (detailLoc) detailLoc.style.opacity = '1';
+
+      if (detailIG) {
+        if (club.instagram) {
+          const handle = '@' + club.instagram.replace(/\/$/, '').split('/').pop();
+          detailIGHandle.textContent = handle;
+          detailIG.href = club.instagram;
+          detailIG.style.display = '';
+        } else {
+          detailIG.style.display = 'none';
+        }
+      }
 
       // Link to club website if available
       if (detailPanel) {
@@ -373,14 +386,15 @@ function initMap() {
     const phoneLine    = club.phone   ? `<div class="popup-phone">${club.phone}</div>` : '';
     const hoursLine    = club.hours   ? `<div class="popup-hours">${club.hours}</div>` : '';
     const emailLine    = club.email   ? `<div class="popup-email"><a href="mailto:${club.email}">${club.email}</a></div>` : '';
-    const websiteLine  = club.website ? `<div class="popup-website"><a href="${club.website}" target="_blank" rel="noopener">Web</a></div>` : '';
+    const websiteLine  = club.website   ? `<div class="popup-website"><a href="${club.website}" target="_blank" rel="noopener">Web</a></div>` : '';
+    const instagramLine = club.instagram ? `<div class="popup-instagram"><a href="${club.instagram}" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></div>` : '';
 
     const marker = L.marker([club.lat, club.lng], { icon: customIcon })
       .addTo(map)
       .bindPopup(`
         <div class="popup-name">${club.name}</div>
         <div class="popup-location">${club.location}</div>
-        ${addressLine}${phoneLine}${hoursLine}${emailLine}${websiteLine}
+        ${addressLine}${phoneLine}${hoursLine}${emailLine}${websiteLine}${instagramLine}
       `);
     clubMarkers.push({ marker, club });
   });

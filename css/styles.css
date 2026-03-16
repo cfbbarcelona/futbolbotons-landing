@@ -698,6 +698,19 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   margin-top: 4px;
   transition: opacity 0.25s ease;
 }
+.club-detail-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.club-detail-instagram:hover {
+  color: #fff;
+}
 
 .clubs-note {
   margin-top: 20px;
