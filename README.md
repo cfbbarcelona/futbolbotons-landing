@@ -1,6 +1,6 @@
 # futbolbotons.cat
 
-Web de referència del futbol amb botons a Catalunya. Directori de clubs, presentació de l'esport i mapa interactiu. Desplegat a GitHub Pages.
+Web de referència del futbol botons a Catalunya. Directori de clubs, presentació de l'esport i mapa interactiu. Desplegat a GitHub Pages.
 
 ## Tech stack
 

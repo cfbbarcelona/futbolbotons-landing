@@ -13,7 +13,7 @@ Imatges que cal substituir pels placeholders actuals. Totes les imatges finals h
 | **Referència HTML** | `<section id="inici"> .hero-bg img` |
 
 **Descripció de la imatge ideal:**
-Foto premium d'un partit real de futbol amb botons en marxa. Pla semi zenital o lateral curt. Taula de joc ben il·luminada, botons i pilota clarament visibles, mans o gest de joc subtil si queda elegant. Sensació de precisió i competició —no de joguina infantil. Ambient net i modern. Profunditat de camp agradable. Evitar: imatges massa vintage, aspecte de joguina barata, excés de gent o soroll visual.
+Foto premium d'un partit real de futbol botons en marxa. Pla semi zenital o lateral curt. Taula de joc ben il·luminada, botons i pilota clarament visibles, mans o gest de joc subtil si queda elegant. Sensació de precisió i competició —no de joguina infantil. Ambient net i modern. Profunditat de camp agradable. Evitar: imatges massa vintage, aspecte de joguina barata, excés de gent o soroll visual.
 
 ---
 
