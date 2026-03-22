@@ -1,9 +1,9 @@
 const clubsData = [
   {
-    id: 'acfb',
-    name: 'Associació Catalana de Futbol Botons',
-    abbr: 'ACFB',
-    logo: 'images/logos/logo-acfb.png',
+    id: 'ccfb',
+    name: 'Club Catalunya Futbol Botons',
+    abbr: 'CCFB',
+    logo: 'images/logos/logo-clubcatalunyafutbolbotons.png',
     lat: 41.405602069213586, 
     lng: 2.1332405979778515,
     location: 'Barcelona (La Bonanova)',

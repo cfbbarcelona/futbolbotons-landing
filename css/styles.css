@@ -812,6 +812,65 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 /* ============================================================
+   SECTION 9 — XARXES SOCIALS
+   ============================================================ */
+/* Fons fosc — coherent amb Clubs */
+.xarxes-section { background: var(--color-dark-2); }
+.xarxes-section .section-title { color: #fff; }
+
+/* Mode estàtic (pocs ítems) */
+.carousel-static {
+  overflow: visible;
+  cursor: default;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+.carousel-static .carousel-track {
+  position: static;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transform: none !important;
+}
+.carousel-static .carousel-item { cursor: pointer; }
+
+/* Thumbnail + badge de plataforma */
+.social-card-media {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+.social-card-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.social-card-platform-badge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  font-size: 1rem;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+}
+
+/* Icona gran quan no hi ha thumbnail */
+.social-card-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.social-detail-icon-el {
+  font-size: 4.5rem;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+#social-detail .club-detail-name { font-size: 1.15rem; }
+
+/* ============================================================
    SECTION 7 — CALENDARI
    ============================================================ */
 .calendari-section .section-body { color: rgba(255,255,255,0.6); max-width: 60ch; }
