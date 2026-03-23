@@ -755,6 +755,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   display: block;
   color: var(--color-gold);
 }
+.comp-card-icon--img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px;
+}
 .comp-card-title {
   font-family: var(--font-heading);
   font-size: 1.15rem;
